@@ -1,3 +1,7 @@
+sudo apt update
+sudo apt upgrade
+sudo apt install openjdk-11-jdk-headless
+
 wget https://dlcdn.apache.org/kafka/3.2.0/kafka_2.13-3.2.0.tgz
 
 tar -xzf kafka_2.13-3.2.0.tgz
