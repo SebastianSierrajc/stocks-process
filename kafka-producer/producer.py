@@ -22,7 +22,7 @@ def getData(bucket, key):
 
 def produce(bootstrap_server, topic, data):
     producer = KafkaProducer(bootstrap_servers = bootstrap_server,
-            value_serializer= lambda x: json.dumps(x).encode('utf-8'))
+            value_serializer= lambda x: x.encode('utf-8'))
     for i, row in data.iterrows():
         r = row.to_json()
         response = producer.send(topic, value=r)

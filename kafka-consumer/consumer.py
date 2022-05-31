@@ -31,13 +31,11 @@ def consume(consumer):
         yield message.value
 
 def process_data(data, min_price, max_price):
-    data = loads(data)
     price = data['PRICE']
     if price < min_price:
         print(f"ALERT:\tprice {price} below min price {min_price}!!!")
     if price > max_price:
         print(f"ALERT:\tprice {price} above max price {max_price}!!!")
-    
 
 def main(min_price, max_price):
     consumer = init_consumer(TOPIC, BOOTSTRAP_SERVER, GROUP_ID)
